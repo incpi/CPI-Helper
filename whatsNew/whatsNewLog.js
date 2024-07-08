@@ -18,12 +18,16 @@ const whats_new_log = [
         "description": "Timeline Plugin now with sorting options. Again special thanks to Gregor Schütz from <a target='_blank' href='https://www.agilita.ch/'>AGILITA AG</a>"
     },
     {
+        "header": "Feature Support",
+        "description": "The CPi helper extension now includes compatibility with the Dark CPI extension. For <b> Dark Theme Users </b> Special thanks to <a target='_blank' href='https://github.com/incpi'>Omkar Patel</a>",
+    },
+    {
         "header": "General Improvement",
-        "description": "Filter to remove extra Empty Steps from Trace & Tool is now more compact.Special thanks to [Omkar Patel](https://github.com/incpi)",
+        "description": "Filter to remove extra Empty Steps from Trace & Tool is now more compact. Special thanks to <a target='_blank' href='https://github.com/incpi'>Omkar Patel</a>",
     },
     {
         "header": "Search Feature",
-        "description": "New global Button for all Logging & Security Materials search with All category supported. Special thanks to [Omkar Patel](https://github.com/incpi).",
+        "description": "New global Button for all Logging & Security Materials search with All category supported. Special thanks to <a target='_blank' href='https://github.com/incpi'>Omkar Patel</a>",
     },
     {
         "header": "Debug Feature",
@@ -31,10 +35,10 @@ const whats_new_log = [
     },
     {
         "header": "Extension Feature",
-        "description": "Can select default log level at extension page.Special thanks to[Omkar Patel](https://github.com/incpi).",
+        "description": "Can select default log level at extension page. Special thanks to <a target='_blank' href='https://github.com/incpi'>Omkar Patel</a>",
     },
     {
         "header": "BugFix",
-        "description": "general UI and bug fixes"
+        "description": "Many general UI and bug fixes"
     }
 ]
