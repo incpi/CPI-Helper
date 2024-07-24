@@ -5,7 +5,7 @@
   let observerIntervalId; // used to attach a MutationObserver callback
   var hostData = {
     title: 'Cloud Integration',
-    color: '#354a5f',
+    color: '#2185d0',
     icon: 'default',
     loglevel: 'warn',
     maxcount: 20, //max number fetch
@@ -173,26 +173,22 @@
   }
 
   function setHeaderColor(color) {
-    let header = document.querySelector('#shell--toolHeader')
-    if (header && header.style && header.style.backgroundColor !== color) {
-      header.style.backgroundColor = color
-      //sync header with popup header
-      const root = document.querySelector(':root');
-      let theme = ($('html').hasClass('sapUiTheme-sap_horizon'))
-      root.style.setProperty('--cpi-custom-color', adjustColorLimiter(color, theme ? 20 : 80, 25, theme));
-      chrome.storage.sync.get("CPIhelperThemeInfo", (theme) => {
-        root.style.setProperty('--cpi-text-color', !theme['CPIhelperThemeInfo'] ? '#ffffff' : '#000000');
-      });
-      // Set the theme color meta tag
-      let themeColorElement = document.querySelector("meta[name='theme-color']");
-      if (themeColorElement) {
-        themeColorElement.content = color;
-      } else {
-        let newElement = document.createElement('meta');
-        newElement.name = 'theme-color';
-        newElement.content = color;
-        document.head.appendChild(newElement);
-      }
+    //sync header with popup header
+    const root = document.querySelector(':root');
+    let theme = ($('html').hasClass('sapUiTheme-sap_horizon'))
+    root.style.setProperty('--cpi-custom-color', adjustColorLimiter(color, !theme ? 80 : 20, 25, !theme));
+    chrome.storage.sync.get("CPIhelperThemeInfo", (theme) => {
+      root.style.setProperty('--cpi-text-color', !theme['CPIhelperThemeInfo'] ? '#ffffff' : '#000000');
+    });
+    // Set the theme color meta tag
+    let themeColorElement = document.querySelector("meta[name='theme-color']");
+    if (themeColorElement) {
+      themeColorElement.content = color;
+    } else {
+      let newElement = document.createElement('meta');
+      newElement.name = 'theme-color';
+      newElement.content = color;
+      document.head.appendChild(newElement);
     }
   }
 
@@ -203,7 +199,7 @@
     let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/x-icon';
     link.rel = 'shortcut icon';
-    link.href = chrome.extension.getURL(`/images/favicons/${icon}.png`);
+    link.href = chrome.runtime.getURL(`/images/favicons/${icon}.png`);
     document.getElementsByTagName('head')[0].appendChild(link);
   }
 

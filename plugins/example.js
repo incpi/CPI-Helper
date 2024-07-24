@@ -116,6 +116,9 @@ var plugin = {
             return true
         }
     },
+    heartbeat:  async (pluginHelper, settings) => {
+        console.log("this function is running every 3 seconds because of example plugin");
+    }
 
 };
 

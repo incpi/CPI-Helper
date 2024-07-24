@@ -48,6 +48,13 @@ It is open source so feel free to check the source code.
 
 ## Changelog
 
+### 3.14.0
+
+- [Improvement] Update to Manifest V3. This is a major and necessary under the hood update and may cause some issues. Please report any issues.
+- [Plugin] New plugin "Get Message ID logs" to get details for messageid in message Sidebar
+- [Plugin] Apache Camel Update Message Remover Plugin (Beta). Get rid of annoying Apache Camel update message. This plugin is in beta and may not
+- [Improvement] CPI Helper survives login procedure and does not need reload after login (beta)
+
 ### 3.13.0
 
 - [Plugin] "Credential Helper" Plugin to add a search help for existing Security Material aliases and Key Store entries. Special thanks to Gregor Schütz from [AGILITA AG](https://www.agilita.ch/)
@@ -529,7 +536,7 @@ We all work in IT and I guess we all know that a message like "My CPI Helper doe
 
 ## Contributing
 
-See [Contribution guidelines for this project](docs/CONTRIBUTING.md) if you want to take part in this project. As I am a beginner myself, beginners are welcome.
+See [Contribution guidelines for this project](docs/readme/contributing.md) if you want to take part in this project. As I am a beginner myself, beginners are welcome.
 
 If you have any ideas, please write a message or comment at the [SAP Community](https://blogs.sap.com/2020/03/05/cpi-chrome-plugin-to-enhance-sap-cloud-platform-integration-usability/#)
 

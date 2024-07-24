@@ -287,13 +287,24 @@ async function createPluginPopupUI(plugin) {
     return container;
 }
 
+async function runPluginHeartbeat() {
+    for (var plugin of pluginList) {
+        var settings = await getPluginSettings(plugin.id);
+        if (settings[plugin.id + "---isActive"] === true) {
+            if (plugin["heartbeat"]) {
+                await plugin["heartbeat"](plugin, settings);
+            }
+        }
+    }
+}
+
 //creates the content for the plugin popup
 async function createContentNodeForPlugins() {
 
     var pluginUIList = document.createElement("div")
     pluginUIList.id = "cpiHelper_popup_plugins";
     pluginUIList.classList = 'ui cards'
-    for (var element of pluginList) {
+    for (var element of pluginList.sort((x, y) => {return x.id.toLowerCase() > y.id.toLowerCase() ? 1 : -1})) {
         pluginUIList.appendChild(await createPluginPopupUI(element));
     }
     return pluginUIList;
